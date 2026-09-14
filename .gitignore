@@ -1,0 +1,78 @@
+# ============================================================
+# UE5 项目 .gitignore —— AdventureGame_2
+# ============================================================
+
+# ---------- 排除第三方素材包（1232 MB，可从 Epic 启动器重新下载）----------
+# 本机文件不受影响，只是不纳入版本控制
+Content/RPG_Character/
+
+# ---------- 编辑器本地数据（每台机器各自生成）----------
+Content/Developers/
+Content/Collections/
+
+# ---------- Visual Studio / IDE 用户配置 ----------
+.vs/
+.idea/
+.vscode/
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+.vsconfig
+
+# ---------- 项目文件（由 .uproject 自动生成）----------
+*.sln
+*.xcodeproj
+*.xcworkspace
+
+# ---------- 编译产物（体积最大的元凶）----------
+Binaries/*
+Plugins/**/Binaries/*
+Intermediate/*
+Plugins/**/Intermediate/*
+DerivedDataCache/*
+Saved/*
+
+# ---------- 编译中间文件 ----------
+*.obj
+*.o
+*.lo
+*.slo
+*.pch
+*.gch
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.la
+*.lai
+*.mod
+*.exe
+*.out
+*.app
+*.ipa
+
+# ---------- 美术源文件 ----------
+SourceArt/**/*.png
+SourceArt/**/*.tga
+
+# ---------- 地图自动生成烘焙数据 ----------
+*_BuiltData.uasset
+
+# ---------- Build 目录（保留黑名单配置和图标）----------
+Build/*
+!Build/*/
+Build/*/**
+!Build/*/PakBlacklist*.txt
+!Build/**/*.ico
+
+# ---------- 系统垃圾文件 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# ---------- 忽略规则模板自身 ----------
+UE5-gitignore-模板.txt
