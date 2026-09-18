@@ -192,9 +192,12 @@ NewBlueprint──Overlap + Cast──▶ 激活 Niagara 特效
 
 ```ini
 [/Script/EngineSettings.GameMapsSettings]
+EditorStartupMap=/Game/ChallengeGame/Maps/Level_Scene_01.Level_Scene_01
 GameDefaultMap=/Game/ChallengeGame/Maps/Level_Scene_01.Level_Scene_01
 GlobalDefaultGameMode=/Game/Code/Character/BP_AdventureMode.BP_AdventureMode_C
 ```
+
+> `EditorStartupMap` 决定编辑器打开项目时载入哪张关卡，`GameDefaultMap` 决定打包后与 Standalone 运行时的启动关卡，两者都指向主关卡，因此克隆仓库后可以直接打开并游玩。
 
 > 所有蓝图的事件图表均已添加**中文范围注释框**，标注每个事件的作用与执行链路，便于复习与后续维护。
 
@@ -257,9 +260,9 @@ AdventureGame_2/
 
 4. **运行**
 
-   项目默认关卡已配置为 `Level_Scene_01`，直接按工具栏的 **Play**（或 `Alt + P`）即可开始游玩。
+   项目已把 `EditorStartupMap` 与 `GameDefaultMap` 都配置为主关卡 `Level_Scene_01`，因此**打开项目后直接按工具栏的 Play（或 `Alt + P`）即可开始游玩**，无需手动找关卡。
 
-   如需在编辑器中查看其它关卡（如素材包自带的 Demo 场景），从内容浏览器手动打开即可。
+   如需查看其它关卡（如素材包自带的 Demo 场景），从内容浏览器手动打开即可（会临时覆盖编辑器启动关卡，下次启动仍回到主关卡）。
 
 ## 开发进度
 
@@ -268,7 +271,7 @@ AdventureGame_2/
 **已完成**
 
 - [x] 项目初始化与渲染管线配置（Lumen / VSM / DX12-SM6）
-- [x] 默认关卡与 GameMode 入口配置
+- [x] 关卡入口配置（`EditorStartupMap` + `GameDefaultMap` 均指向主关卡，克隆后可直接游玩）
 - [x] Enhanced Input 体系搭建（4 个 Input Action + 1 个 Mapping Context，含轴向修正）
 - [x] 第三人称角色：弹簧臂相机、移动、视角控制
 - [x] **鼠标滚轮缩放视角**（Axis1D 输入 + FClamp 范围限制）
